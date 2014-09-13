@@ -28,7 +28,7 @@ Meshes implements coordinates space (x, y) with rules:
 
 *Constraints insertion*
 
-The most high-level class for constraint representation is `DDLSObject`. You should consider to use this class in almost all cases because it is the most convenient to manipulate. Indeed `DDLSObject` supports basic 2D transformations:
+The most high-level class for constraint representation is `DDLSObject`. You should consider to use this class in most of cases because it is the most convenient to manipulate. Indeed `DDLSObject` supports basic 2D transformations:
 
  * `x`
  * `y`
