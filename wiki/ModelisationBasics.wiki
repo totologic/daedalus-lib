@@ -1,0 +1,21 @@
+#summary Basic tools to build triangulations
+
+The first thing you will want is to create an empty mesh and populate with constraints.
+
+*How to create a new mesh*
+
+Base class for meshes is `DDLSMesh`. Keep in mind this class because it manages almost all constraints insertion and deletion.
+
+Although it is possible to instanciate directly a `DDLSMesh` object, it is not the more  convenient way to proceed. Think that Daedalus Lib implements triangulations through complex half-edge data structure, making them very hard to create from scratch for beginners.
+
+Instead use the static:
+
+`DDLSRectMeshFactory.buildRectangle(width:Number, height:Number):DDLSMesh`
+
+example:
+
+{{{
+var mesh:DDLSMesh = DDLSRectMeshFactory.buildRectangle(600, 400);
+}}}
+
+The result is an instance of `DDLSMesh` as a 2 polygons rectangle of size 600x400.
