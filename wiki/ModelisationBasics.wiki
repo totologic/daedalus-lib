@@ -22,8 +22,8 @@ var mesh:DDLSMesh = DDLSRectMeshFactory.buildRectangle(600, 400);
 The result is an instance of `DDLSMesh` as a 2 polygons rectangle of size 600x400.
 
 Meshes implements coordinates space (x, y) with rules:
- * top-left corner is (0, 0) coordinates
- * bottom-right corner is (_width_, _height_) coordinates
+ * top-left corner defines (0, 0) coordinates
+ * bottom-right corner defines (_width_, _height_) coordinates
 
 
 *Constraints insertion*
