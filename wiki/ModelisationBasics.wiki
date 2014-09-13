@@ -60,7 +60,7 @@ Literally, the coordinates vector must have the form:
 
 For convenience, you should consider that the registered coordinates are in object's local coordinates space.
 
-You should not care about edges intersection or overlapping. Indeed Daedalus Lib manages properly and automatically vertices merging sub-vertices insertion to keep a safe Delaunay triangulation.
+You should not care about edges intersection or overlapping. Indeed Daedalus Lib manages properly and automatically vertices merging and sub-vertices insertions to keep a safe Delaunay triangulation.
 
 Also, you must think a `DDLSObject` instance as an unbreakable set of edges and must be considered as a whole. It meets the concept of _rigid body_ in most of physic engines. So if at any time you feel the need to detach a subset edges from a `DDLSObject` instance, you should consider to create 2 `DDLSObject` instances instead.
 
