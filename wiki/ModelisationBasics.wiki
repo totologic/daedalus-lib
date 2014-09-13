@@ -110,12 +110,12 @@ Because transformations are set before insertion, they will be automatically app
 
 Notice that the `rotation` property is expressed in radians.
 
-Remember than the transformations are applied with a fixed order:
+Also transformations are applied with a fixed order:
  # scaling
  # rotation
  # translation
 
-At last, when you need to transform one or several instances of already inserted `DDLSObject`, you must force the application by calling:
+At last, when you need to transform one or several instances of already inserted `DDLSObject`, you just need to force the application by calling:
 
 {{{
 mesh.updateObjects();
