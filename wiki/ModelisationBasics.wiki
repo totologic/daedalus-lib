@@ -26,7 +26,7 @@ Meshes implements coordinates space (x, y) with rules:
  * bottom-right corner defines (_width_, _height_) coordinates
 
 
-*Constraints insertion*
+===Constraints insertion===
 
 The most high-level class for constraint representation is `DDLSObject`. You should consider to use this class in most of cases because it is the most convenient to manipulate. Indeed `DDLSObject` supports basic 2D transformations:
 
@@ -68,3 +68,12 @@ mesh.insertObject(object);
 }}}
 
 Do insertion only when edges coordinates are fully registered. No more edges can be added after insertion.
+
+
+===Constraints deletion===
+
+You can delete any previously inserted `DDLSObject` instance at any time. Just use the following:
+
+{{{
+mesh.deleteObject(object);
+}}}
