@@ -55,11 +55,11 @@ Edges must always be registered by coordinates of its 2 endpoints as quadruplet 
 
 Literally, the coordinates vector must have the form:
 
-`[e0_p0_x, e0_p0_y, e0_p1_x, e0_p1_y, e1_p0_x, e1_p0_y, e1_p1_x, e1_p1_y, ...]`
+`[e0_p1_x, e1_p0_y, e0_p2_x, e0_p2_y, e1_p1_x, e1_p1_y, e1_p2_x, e1_p2_y, ...]`
 
 For convenience, you should consider that the registered coordinates are in object's local coordinates space.
 
-Also, you must think a `DDLSObject` instance as an unbreakable set of edges and must be considered as a whole. It meets the concept of _rigid body_ in most of physic engines. So if at any time you feel the need to detach a subset edges from a `DDLSObject` instance, you should consider to create 2 `DDLSObject` instancec instead.
+Also, you must think a `DDLSObject` instance as an unbreakable set of edges and must be considered as a whole. It meets the concept of _rigid body_ in most of physic engines. So if at any time you feel the need to detach a subset edges from a `DDLSObject` instance, you should consider to create 2 `DDLSObject` instances instead.
 
 Finally, `DDLSMesh` easily manages insertion:
 
