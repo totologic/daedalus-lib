@@ -25,6 +25,7 @@ Meshes implements coordinates space (x, y) with rules:
  * top-left corner defines (0, 0) coordinates
  * bottom-right corner defines (_width_, _height_) coordinates
 
+You should consider this rectangle as defining an AABB for your environment.
 
 ===Constraints insertion===
 
@@ -59,6 +60,8 @@ Literally, the coordinates vector must have the form:
 
 For convenience, you should consider that the registered coordinates are in object's local coordinates space.
 
+You should not care about edges intersection or overlapping. Indeed Daedalus Lib manages properly and automatically vertices merging sub-vertices insertion to keep a safe Delaunay triangulation.
+
 Also, you must think a `DDLSObject` instance as an unbreakable set of edges and must be considered as a whole. It meets the concept of _rigid body_ in most of physic engines. So if at any time you feel the need to detach a subset edges from a `DDLSObject` instance, you should consider to create 2 `DDLSObject` instances instead.
 
 Finally, `DDLSMesh` easily manages insertion:
@@ -66,6 +69,8 @@ Finally, `DDLSMesh` easily manages insertion:
 {{{
 mesh.insertObject(object);
 }}}
+
+Daedalus Lib manages AABB clipping and your inserted `DDLSObject` instance can safely be partly or completely outside of the mesh bounds.
 
 Do insertion only when edges coordinates are fully registered. No more edges can be added after insertion.
 
@@ -77,3 +82,35 @@ You can delete any previously inserted `DDLSObject` instance at any time. Just u
 {{{
 mesh.deleteObject(object);
 }}}
+
+===Constraint transformation===
+
+Any transformation can be applied to your `DDLSObject` before insertion. You could translate, rotate or scale your object as it suits for your need.
+
+example:
+{{{
+var mesh:DDLSMesh = DDLSRectMeshFactory.buildRectangle(600, 400);
+
+var shapeCoords:Vector.<Number> = new Vector.<Number>();
+shapeCoords.push(-50, -50, 50, -50); // 1st segment coordinates
+shapeCoords.push(50, -50, 50, 50); // 2nd segment coordinates
+shapeCoords.push(50, 50, -50, 50); // 3rd segment coordinates
+shapeCoords.push(-50, 50, -50, -50); // 4th segment coordinates
+object.coordinates = shapeCoords
+
+// slightly rotate the object and move it on the center
+object.rotation = Math.PI / 8;
+object.x = 300;
+object.y = 200;
+
+mesh.insertObject(object);
+}}}
+
+Because transformations are set before insertion, they will be automatically applied.
+
+Notice that `rotation` property is expressed in radians.
+
+Remember than the transformations are applied with a fixed order:
+ # scaling
+ # rotation
+ # translation
