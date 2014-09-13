@@ -108,9 +108,15 @@ mesh.insertObject(object);
 
 Because transformations are set before insertion, they will be automatically applied.
 
-Notice that `rotation` property is expressed in radians.
+Notice that the `rotation` property is expressed in radians.
 
 Remember than the transformations are applied with a fixed order:
  # scaling
  # rotation
  # translation
+
+When you need to transform one or several instances of already inserted `DDLSObject`, you must force the application by calling:
+
+{{{
+mesh.updateObjects();
+}}}
