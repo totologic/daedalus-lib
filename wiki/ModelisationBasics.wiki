@@ -54,6 +54,7 @@ object.coordinates = shapeCoords
 Edges must always be registered by coordinates of its 2 endpoints as quadruplet `(x1, y1, x2, y2)`.
 
 Literally, the coordinates vector must have the form:
+
 `[e0_p0_x, e0_p0_y, e0_p1_x, e0_p1_y, e1_p0_x, e1_p0_y, e1_p1_x, e1_p1_y, ...]`
 
 For convenience, you should consider that the registered coordinates are in object's local coordinates space.
