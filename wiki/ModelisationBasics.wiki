@@ -115,7 +115,7 @@ Remember than the transformations are applied with a fixed order:
  # rotation
  # translation
 
-When you need to transform one or several instances of already inserted `DDLSObject`, you must force the application by calling:
+At last, when you need to transform one or several instances of already inserted `DDLSObject`, you must force the application by calling:
 
 {{{
 mesh.updateObjects();
