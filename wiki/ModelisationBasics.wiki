@@ -3,7 +3,7 @@
 The first thing you will want is to create an empty mesh and populate with constraints.
 
 
-*How to create a new mesh*
+===How to create a new mesh===
 
 Base class for meshes is `DDLSMesh`. Keep in mind this class because it manages almost all constraints insertion and deletion.
 
