@@ -45,10 +45,10 @@ After `DDLSObject` instanciation, the first thing you should do is to register i
 var object:DDLSObject = new DDLSObject;
 // define it as a square shape:
 var shapeCoords:Vector.<Number> = new Vector.<Number>();
-shapeCoords.push(-50, -50, 50, -50); // 1st segment coordinates
-shapeCoords.push(50, -50, 50, 50); // 2nd segment coordinates
-shapeCoords.push(50, 50, -50, 50); // 3rd segment coordinates
-shapeCoords.push(-50, 50, -50, -50); // 4th segment coordinates
+shapeCoords.push(-50, -50, 50, -50); // 1st edge coordinates
+shapeCoords.push(50, -50, 50, 50); // 2nd edge coordinates
+shapeCoords.push(50, 50, -50, 50); // 3rd edge coordinates
+shapeCoords.push(-50, 50, -50, -50); // 4th edge coordinates
 object.coordinates = shapeCoords
 }}}
 
