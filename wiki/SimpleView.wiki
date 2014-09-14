@@ -1,0 +1,17 @@
+#summary Display debug view for your triangulations
+
+Although triangulations are rarely used directly for display, it is useful to have some tools showing them for debug.
+
+===Simple view===
+
+Assuming you have instanciated and populated a `DDLSMesh` object, you can use the `DDLSSimpleView` to quickly see the resulting triangulation.
+
+example:
+{{{
+var view:DDLSSimpleView = new DDLSSimpleView();
+addChild(view.surface);
+
+view.drawMesh(mesh);
+}}}
+
+Call the `drawMesh` method every time you need to refresh the display of your triangulation. 
