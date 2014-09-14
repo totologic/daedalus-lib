@@ -1,4 +1,5 @@
 #summary Display debug view for your triangulations
+#labels ID-2
 
 Although triangulations are rarely used directly for display, it is useful to have some tools showing them for debug.
 
