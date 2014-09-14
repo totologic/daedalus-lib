@@ -5,7 +5,7 @@ Although triangulations are rarely used directly for display, it is useful to ha
 
 ===Simple view===
 
-Assuming you have instanciated and populated a `DDLSMesh` object, you can use the `DDLSSimpleView` to quickly see the resulting triangulation.
+Assuming you have instanciated and populated a `DDLSMesh` object, you can use the `DDLSSimpleView` class to quickly see the resulting triangulation.
 
 example:
 {{{
@@ -15,4 +15,4 @@ addChild(view.surface);
 view.drawMesh(mesh);
 }}}
 
-Call the `drawMesh` method every time you need to refresh the display of your triangulation. 
+A default viewport is created for you, you must add it to the display list to see the result. Then call the `drawMesh()` method every time you need to refresh the display of your triangulation.
