@@ -1,7 +1,7 @@
-#summary Build triangulations from images segmentation
+#summary Build triangulations from image vectorizations
 #labels ID-3
 
-Daedalus Lib gives you the opportunity to build triangulations by segmentation of black and white images.
+Daedalus Lib gives you the opportunity to build triangulations by vectorization of black and white images.
 
 ===How to create an object from image===
 
