@@ -29,4 +29,4 @@ mesh.insertObject(object);
 
 Because the underlying implementation uses the Potrace algorithm, you should remember to use images made from 2 colors only: black (0x000000) and white (0xFFFFFF). If your image contains other colors, a threshold will be applied and any color different from white will be considered as black.
 
-As a recommendation, you should be careful about the size of the image you use. High resolution images can lead to a long time to process.
+As a recommendation, you should be careful about the size of the images you use. High resolution images can lead to a long time to process.
