@@ -1,7 +1,7 @@
 #summary Build triangulations from image vectorizations
 #labels ID-3
 
-Instead of building constraints by exhaustively write set of coordinates, you can generate constraints by vectorization of black and white images.
+Instead of building constraints by exhaustively write set of coordinates, you can generate them by vectorization of black and white images.
 
 ===How to create an object from image===
 
