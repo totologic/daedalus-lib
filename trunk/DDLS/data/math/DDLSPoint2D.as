@@ -73,6 +73,13 @@ package DDLS.data.math
 			x = x*s;
 			y = y*s;
 		}
+		
+		public function distanceTo(p:DDLSPoint2D):Number
+		{
+			var diffX:Number = x - p.x;
+			var diffY:Number = y - p.y;
+			return Math.sqrt(diffX*diffX + diffY*diffY);
+		}
 
 	}
 }
