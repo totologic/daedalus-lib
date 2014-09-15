@@ -3,7 +3,7 @@
 
 Daedalus Lib gives you the opportunity to build triangulations directly from black and white images.
 
-How to create an object from image
+===How to create an object from image===
 
 Assuming you have instanciateda `DDLSMesh` object, you can use the following static to create a new `DDLSObject` instance:
 
