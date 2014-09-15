@@ -1,11 +1,11 @@
 #summary Build triangulations from image vectorizations
 #labels ID-3
 
-Daedalus Lib gives you the opportunity to build triangulations by vectorization of black and white images.
+Instead of building constraints by exhaustively write set of coordinates, you can generate constraints by vectorization of black and white images.
 
 ===How to create an object from image===
 
-Instead of building constraints by exhaustively write set of coordinates, you can use the following static to create new `DDLSObject` instances from images:
+You can use the following static to create new `DDLSObject` instances from images:
 
 `DDLSBitmapObjectFactory.buildFromBmpData(bmpData:BitmapData):DDLSObject`
 
