@@ -1,11 +1,11 @@
-#summary Build triangulations from images
+#summary Build triangulations from images segmentation
 #labels ID-3
 
-Daedalus Lib gives you the opportunity to build triangulations directly from black and white images.
+Daedalus Lib gives you the opportunity to build triangulations by segmentation of black and white images.
 
 ===How to create an object from image===
 
-Assuming you have instanciated a `DDLSMesh` object, you can use the following static to create a new `DDLSObject` instance:
+Instead of building constraints by exhaustively write set of coordinates, you can use the following static to create new `DDLSObject` instances from images:
 
 `DDLSBitmapObjectFactory.buildFromBmpData(bmpData:BitmapData):DDLSObject`
 
@@ -24,7 +24,6 @@ bitmapData.draw(shape);
 
 // finally build the DDLSObject instance from the BitmapData
 var object:DDLSObject = DDLSBitmapObjectFactory.buildFromBmpData(bitmapData);
-mesh.insertObject(object);
 }}}
 
 Because the underlying implementation uses the Potrace algorithm, you should remember to use images made from 2 colors only: black (0x000000) and white (0xFFFFFF). If your image contains other colors, a threshold will be applied and any color different from white will be considered as black.
