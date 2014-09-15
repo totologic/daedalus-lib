@@ -22,7 +22,7 @@ shape.graphics.endFill();
 var bitmapData:BitmapData = new BitmapData(100, 100, false, 0xFFFFFF);
 bitmapData.draw(shape);
 
-// finally build the `DDLSObject` instance from the BitmapData
+// finally build the DDLSObject instance from the BitmapData
 var object:DDLSObject = DDLSBitmapObjectFactory.buildFromBmpData(bitmapData);
 mesh.insertObject(object);
 }}}
