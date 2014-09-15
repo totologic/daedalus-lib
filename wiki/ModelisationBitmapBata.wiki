@@ -5,7 +5,7 @@ Daedalus Lib gives you the opportunity to build triangulations directly from bla
 
 ===How to create an object from image===
 
-Assuming you have instanciateda `DDLSMesh` object, you can use the following static to create a new `DDLSObject` instance:
+Assuming you have instanciated a `DDLSMesh` object, you can use the following static to create a new `DDLSObject` instance:
 
 `DDLSBitmapObjectFactory.buildFromBmpData(bmpData:BitmapData):DDLSObject`
 
