@@ -7,13 +7,7 @@ package
 	import DDLS.view.DDLSSimpleView;
 	
 	import flash.display.Bitmap;
-	import flash.display.BitmapData;
-	import flash.display.Shape;
 	import flash.display.Sprite;
-	import flash.events.TimerEvent;
-	import flash.text.TextField;
-	import flash.utils.Timer;
-	import flash.utils.getTimer;
 
 	[SWF(width="600", height="600")]
 	public class DemoFromBitmap extends Sprite
