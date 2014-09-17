@@ -1,7 +1,7 @@
 #summary Solve pathfinding request
 #labels ID-4
 
-After triangulations building we are ready to process soe pathfinding.
+After triangulations building, we are ready to process some pathfinding.
 
 ===Set an entity===
 
