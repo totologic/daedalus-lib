@@ -1,4 +1,4 @@
-#summary Solve pathfinding request
+#summary Solve pathfinding requests
 #labels ID-4
 
 After triangulations building, we are ready to process some pathfinding.
@@ -38,3 +38,29 @@ pathfinder.mesh = mesh;
 var path:Vector.<Number> = new Vector.<Number>();
 pathfinder.findpath(530, 460, path);
 }}}
+
+The first step is to reference your entity and your mesh to your pathfinder.
+
+Then you need a path container ; an empty `Vector.<Number>` that will contain the result of your pathfinding request.
+
+Then, run the`findpath` giving destination coordinates and the path container as arguments. The path is solved from the current entity position.
+
+As a result, the path container should now list the coordinates of the path as pairs of (x, y) values. In consequence, a way to trace the path would be:
+
+{{{
+for (var i:int=0 ; i<path.length ; i++)
+{
+	trace(i , "th point");
+	trace("x:" , path[i*2]);
+	trace("y:" , path[i*2+1] );
+}
+}}}
+
+Literally, the coordinates stored in path have the form:
+
+`[p0_x, p0_y, p1_x, p1_y, ..., pn_x, pn_y]`
+
+Notice that:
+ * (p0_x, p0_y) is the start position
+ * (pn_x, pn_y) is the destination position
+ * path has length 0 if no path was found
