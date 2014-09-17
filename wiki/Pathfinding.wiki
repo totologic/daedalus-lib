@@ -43,7 +43,7 @@ The first step is to reference your entity and your mesh to your pathfinder.
 
 Then you need a path container ; an empty `Vector.<Number>` that will contain the result of your pathfinding request.
 
-Then, run the `findpath` giving destination coordinates and the path container as arguments. The path is solved from the current entity position.
+Then, run the `findpath` method, giving destination coordinates and the path container as arguments. The path is solved from the current entity position.
 
 As a result, the path container should now list the coordinates of the path as pairs of (x, y) values. In consequence, a way to trace the path would be:
 
