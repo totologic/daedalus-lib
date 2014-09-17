@@ -1,0 +1,40 @@
+#summary Solve pathfinding request
+#labels ID-4
+
+After triangulations building we are ready to process soe pathfinding.
+
+===Set an entity===
+
+`DDLSEntityAI` is the class you must use in order to incarnate your moving object. More precisely, because an instance of `DDLSEntityAI` class doesn't have any graphic or physic properties, you can consider it as an abstraction of your object.
+
+To process a pathfinding, only few properties must be set entity, as show in the following example:
+
+{{{
+var entityAI: DDLSEntityAI = new DDLSEntityAI();
+entityAI.radius = 10;
+entityAI.x = 40; 
+entityAI.y = 50;
+}}}
+
+A `DDLSEntityAI` instance is always shaped as a circle, so it has a radius property. It will be used by the pathfinder to make sure your entity keep a minimum distance from the constraints when solving the path resolution. Maybe your real object (graphic or physic) is not shaped as a circle, so you must choose the most relevant size for your need. For example you could use a radius value that makes the circle shape bounding closely your object  ; in consequence you are sure that no part of your object will hit a constraint when following the path.
+
+Remember that you are free to use many `DDLSEntityAI` instances in your application, each having his own radius value.
+
+x and y properties match the current position of your entity. Positions must be considered as expressed in the global coordinates system of the `DDLSMesh` instance your entity is living in.
+
+
+===Solve a path===
+
+Given a `DDLSMesh` instance populated with constraints and a `DDLSEntityAI` instance, you will use the `DDLSPathfinder` class to solve path requests through the method:
+
+`findPath(toX:Number, toY:Number, resultPath:Vector.<Number>):void`
+
+example:
+{{{
+example:
+var pathfinder: DDLSPathFinder = new DDLSPathFinder();
+pathfinder.entity = entityAI;
+pathfinder.mesh = mesh;
+var path:Vector.<Number> = new Vector.<Number>();
+pathfinder.findpath(530, 460, path);
+}}}
