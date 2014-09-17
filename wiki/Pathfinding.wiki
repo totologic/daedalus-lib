@@ -7,7 +7,7 @@ After triangulations building, we are ready to process some pathfinding.
 
 `DDLSEntityAI` is the class you must use in order to incarnate your moving object. More precisely, because an instance of `DDLSEntityAI` class doesn't have any graphic or physic properties, you can consider it as an abstraction of your object.
 
-To process a pathfinding, only few properties must be set entity, as show in the following example:
+To process a pathfinding, only few properties must be set on entities, as show in the following example:
 
 {{{
 var entityAI: DDLSEntityAI = new DDLSEntityAI();
