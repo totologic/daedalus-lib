@@ -10,7 +10,6 @@ package DDLS.view
 	import DDLS.iterators.IteratorFromVertexToIncomingEdges;
 	
 	import flash.display.LineScaleMode;
-	import flash.display.Shape;
 	import flash.display.Sprite;
 	import flash.text.TextField;
 	import flash.utils.Dictionary;
@@ -18,24 +17,29 @@ package DDLS.view
 	public class DDLSSimpleView
 	{
 		
-		private var _edges:Shape;
-		private var _constraints:Shape;
-		private var _vertices:Shape;
-		private var _entities:Shape;
+		private var _edges:Sprite;
+		private var _constraints:Sprite;
+		private var _vertices:Sprite;
+		private var _paths:Sprite;
+		private var _entities:Sprite;
 		
 		private var _surface:Sprite;
 		
+		private var _showVerticesIndices:Boolean = false;
+		
 		public function DDLSSimpleView()
 		{
-			_edges = new Shape();
-			_constraints = new Shape();
-			_vertices = new Shape();
-			_entities = new Shape();
+			_edges = new Sprite();
+			_constraints = new Sprite();
+			_vertices = new Sprite();
+			_paths = new Sprite();
+			_entities = new Sprite();
 			
 			_surface = new Sprite();
 			_surface.addChild(_edges);
 			_surface.addChild(_constraints);
 			_surface.addChild(_vertices);
+			_surface.addChild(_paths);
 			_surface.addChild(_entities);
 		}
 		
@@ -50,6 +54,9 @@ package DDLS.view
 			_edges.graphics.clear();
 			_constraints.graphics.clear();
 			_vertices.graphics.clear();
+			
+			while (_vertices.numChildren)
+				_vertices.removeChildAt(0);
 			
 			_surface.graphics.beginFill(0x00, 0);
 			_surface.graphics.lineStyle(1, 0xFF0000, 1, false, LineScaleMode.NONE);
@@ -76,13 +83,16 @@ package DDLS.view
 				_vertices.graphics.drawCircle(vertex.pos.x, vertex.pos.y, 0.5);
 				_vertices.graphics.endFill();
 				
-				/*var tf:TextField = new TextField();
-				tf.mouseEnabled = false;
-				tf.text = String(vertex.id);
-				tf.x = vertex.pos.x + 5;
-				tf.y = vertex.pos.y + 5;
-				tf.width = tf.height = 20;
-				_vertices.addChild(tf);*/
+				if (_showVerticesIndices)
+				{
+					var tf:TextField = new TextField();
+					tf.mouseEnabled = false;
+					tf.text = String(vertex.id);
+					tf.x = vertex.pos.x + 5;
+					tf.y = vertex.pos.y + 5;
+					tf.width = tf.height = 20;
+					_vertices.addChild(tf);
+				}
 				
 				iterEdges.fromVertex = vertex;
 				while ( incomingEdge = iterEdges.next() )
@@ -108,18 +118,44 @@ package DDLS.view
 			}
 		}
 		
+		public function drawEntity(entity:DDLSEntityAI, cleanBefore:Boolean=true):void	
+		{
+			if (cleanBefore)
+				_entities.graphics.clear();
+			
+			_entities.graphics.lineStyle(1, 0x00FF00, 1, false, LineScaleMode.NONE);
+			_entities.graphics.beginFill(0x00FF00, 0.5);
+			_entities.graphics.drawCircle(entity.x, entity.y, entity.radius);
+			_entities.graphics.endFill();
+		}
+		
 		public function drawEntities(vEntities:Vector.<DDLSEntityAI>, cleanBefore:Boolean=true):void	
 		{
 			if (cleanBefore)
 				_entities.graphics.clear();
 			
-			_entities.graphics.lineStyle(1, 0x0000FF, 1, false, LineScaleMode.NONE);
+			_entities.graphics.lineStyle(1, 0x00FF00, 0.5, false, LineScaleMode.NONE);
 			for (var i:int=0 ; i<vEntities.length ; i++)
 			{
-				_entities.graphics.beginFill(0x6666FF, 1);
+				_entities.graphics.beginFill(0x00FF00, 1);
 				_entities.graphics.drawCircle(vEntities[i].x, vEntities[i].y, vEntities[i].radius);
 				_entities.graphics.endFill();
 			}
+		}
+		
+		public function drawPath(path:Vector.<Number>, cleanBefore:Boolean=true):void
+		{
+			if (cleanBefore)
+				_paths.graphics.clear();
+			
+			if (path.length == 0)
+				return;
+			
+			_paths.graphics.lineStyle(1.5, 0xFF00FF, 0.5, false, LineScaleMode.NONE);
+			
+			_paths.graphics.moveTo(path[0], path[1]);
+			for (var i:int=2 ; i<path.length ; i+=2)
+				_paths.graphics.lineTo(path[i], path[i+1]);
 		}
 		
 		
