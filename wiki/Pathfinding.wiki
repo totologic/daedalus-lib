@@ -61,6 +61,38 @@ Literally, the coordinates stored in path have the form:
 `[p0_x, p0_y, p1_x, p1_y, ..., pn_x, pn_y]`
 
 Notice that:
- * (p0_x, p0_y) is the start position
- * (pn_x, pn_y) is the destination position
+ * `(p0_x, p0_y)` is the start position
+ * `(pn_x, pn_y)` is the destination position
  * path has length 0 if no path was found
+
+===Path sampling===
+
+Depending of the use you do in your application, you could need to iterate through the path within a fixed distance each step. The `DDLSLinearPathSampler` can do it for you.
+
+example:
+{{{
+var pathSampler:DDLSLinearPathSampler = new DDLSLinearPathSampler();
+pathSampler.samplingDistance = 5;
+pathSampler.path = path;
+
+while (pathSampler.hasNext)
+{
+	pathSampler.next();
+	trace(pathSampler.x, pathSampler.y);
+}
+}}}
+
+Additionally, you could reference your entity to the path sampler and have it automatically updated:
+
+{{{
+var pathSampler:DDLSLinearPathSampler = new DDLSLinearPathSampler();
+pathSampler.entity = entityAI;
+pathSampler.samplingDistance = 5;
+pathSampler.path = path;
+
+while (pathSampler.hasNext)
+{
+	pathSampler.next();
+	trace(entityAI.x, entityAI.y);
+}
+}}}
