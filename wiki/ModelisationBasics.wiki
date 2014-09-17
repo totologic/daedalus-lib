@@ -53,7 +53,7 @@ shapeCoords.push(-50, 50, -50, -50); // 4th edge coordinates
 object.coordinates = shapeCoords
 }}}
 
-Edges must always be registered by coordinates of its 2 endpoints as quadruplet `(x1, y1, x2, y2)`.
+An edge must always be registered by coordinates of its 2 endpoints as a quadruplet `(x1, y1, x2, y2)`.
 
 Literally, the coordinates vector must have the form:
 
