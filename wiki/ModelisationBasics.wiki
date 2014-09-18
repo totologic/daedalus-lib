@@ -21,7 +21,6 @@ var mesh:DDLSMesh = DDLSRectMeshFactory.buildRectangle(600, 400);
 }}}
 
 The result is an instance of `DDLSMesh` as a 2 polygons rectangle of size 600x400:
-
 https://daedalus-lib.googlecode.com/svn/wiki/img/page1/rect_mesh.jpg
 
 Meshes implements coordinates space (x, y) with rules:
@@ -74,7 +73,6 @@ mesh.insertObject(object);
 }}}
 
 Result:
-
 https://daedalus-lib.googlecode.com/svn/wiki/img/page1/insert_square.jpg
 
 Daedalus Lib manages AABB clipping and your inserted `DDLSObject` instance can safely be partly or completely outside of the mesh bounds.
