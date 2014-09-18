@@ -48,7 +48,7 @@ Because the underlying implementation is inspired by the Potrace algorithm, you 
 
 As a recommendation, you should be careful about the size of the images you use. High resolution images can lead to a long time to process.
 
-black and white image example:
+black and white 400x400 image example:
 
 https://daedalus-lib.googlecode.com/svn/wiki/img/page3/supernull_nb.png
 
