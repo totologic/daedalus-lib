@@ -78,6 +78,10 @@ package DDLS.view
 			//
 			while ( vertex = iterVertices.next() )
 			{
+				dictVerticesDone[vertex] = true;
+				if (!vertexIsInsideAABB(vertex, mesh))
+					continue;
+				
 				//_vertices.graphics.lineStyle(0, 0);
 				_vertices.graphics.beginFill(0x0000FF, 1);
 				_vertices.graphics.drawCircle(vertex.pos.x, vertex.pos.y, 0.5);
@@ -113,9 +117,9 @@ package DDLS.view
 						}
 					}
 				}
-				
-				dictVerticesDone[vertex] = true;
 			}
+			
+			
 		}
 		
 		public function drawEntity(entity:DDLSEntityAI, cleanBefore:Boolean=true):void	
@@ -158,6 +162,13 @@ package DDLS.view
 				_paths.graphics.lineTo(path[i], path[i+1]);
 		}
 		
+		private function vertexIsInsideAABB(vertex:DDLSVertex, mesh:DDLSMesh):Boolean
+		{
+			if (vertex.pos.x < 0 || vertex.pos.x > mesh.width || vertex.pos.y < 0 || vertex.pos.y > mesh.height)
+				return false;
+			else
+				return true;
+		}
 		
 	}
 }
