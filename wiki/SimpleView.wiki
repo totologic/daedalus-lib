@@ -16,3 +16,7 @@ view.drawMesh(mesh);
 }}}
 
 A default viewport is created for you, you must add it to the display list to see the result. Then call the `drawMesh()` method every time you need to refresh the display of your triangulation.
+
+https://daedalus-lib.googlecode.com/svn/wiki/page2/show_view.jpg
+
+Constrained edges are drawn in red whereas underlying triangulation's edges are in gray.
