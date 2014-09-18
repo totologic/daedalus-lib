@@ -20,7 +20,9 @@ example:
 var mesh:DDLSMesh = DDLSRectMeshFactory.buildRectangle(600, 400);
 }}}
 
-The result is an instance of `DDLSMesh` as a 2 polygons rectangle of size 600x400.
+The result is an instance of `DDLSMesh` as a 2 polygons rectangle of size 600x400:
+
+https://daedalus-lib.googlecode.com/svn/wiki/img/page1/rect_mesh.jpg
 
 Meshes implements coordinates space (x, y) with rules:
  * top-left corner defines (0, 0) coordinates
@@ -50,7 +52,7 @@ shapeCoords.push(-50, -50, 50, -50); // 1st edge coordinates
 shapeCoords.push(50, -50, 50, 50); // 2nd edge coordinates
 shapeCoords.push(50, 50, -50, 50); // 3rd edge coordinates
 shapeCoords.push(-50, 50, -50, -50); // 4th edge coordinates
-object.coordinates = shapeCoords
+object.coordinates = shapeCoords;
 }}}
 
 An edge must always be registered by coordinates of its 2 endpoints as a quadruplet `(x1, y1, x2, y2)`.
@@ -97,7 +99,7 @@ shapeCoords.push(-50, -50, 50, -50); // 1st segment coordinates
 shapeCoords.push(50, -50, 50, 50); // 2nd segment coordinates
 shapeCoords.push(50, 50, -50, 50); // 3rd segment coordinates
 shapeCoords.push(-50, 50, -50, -50); // 4th segment coordinates
-object.coordinates = shapeCoords
+object.coordinates = shapeCoords;
 
 // slightly rotate the object and move it on the center
 object.rotation = Math.PI / 8;
