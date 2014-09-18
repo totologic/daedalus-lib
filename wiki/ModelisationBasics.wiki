@@ -73,6 +73,10 @@ Finally, `DDLSMesh` easily manages insertion:
 mesh.insertObject(object);
 }}}
 
+Result:
+
+https://daedalus-lib.googlecode.com/svn/wiki/img/page1/insert_square.jpg
+
 Daedalus Lib manages AABB clipping and your inserted `DDLSObject` instance can safely be partly or completely outside of the mesh bounds.
 
 Do insertion only when edges coordinates are fully registered. No more edges can be added after insertion.
