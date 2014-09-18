@@ -51,3 +51,7 @@ As a recommendation, you should be careful about the size of the images you use.
 black and white image example:
 
 https://daedalus-lib.googlecode.com/svn/wiki/img/page3/supernull_nb.png
+
+
+result after triangulation:
+https://daedalus-lib.googlecode.com/svn/wiki/img/page3/supernull_triangulated.jpg
