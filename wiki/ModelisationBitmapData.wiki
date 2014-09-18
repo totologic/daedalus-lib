@@ -54,4 +54,5 @@ https://daedalus-lib.googlecode.com/svn/wiki/img/page3/supernull_nb.png
 
 
 result after triangulation:
+
 https://daedalus-lib.googlecode.com/svn/wiki/img/page3/supernull_triangulated.jpg
