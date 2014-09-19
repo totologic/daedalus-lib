@@ -48,7 +48,7 @@ Then, run the `findpath` method, giving destination coordinates and the path con
 As a result, the path container should now list the coordinates of the path as pairs of (x, y) values. In consequence, a way to trace the path would be:
 
 {{{
-for (var i:int=0 ; i<path.length ; i++)
+for (var i:int=0 ; i<path.length/2 ; i++)
 {
 	trace(i , "th point");
 	trace("x:" , path[i*2]);
