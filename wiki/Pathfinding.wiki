@@ -45,10 +45,6 @@ Then you need a path container ; an empty `Vector.<Number>` that will contain th
 
 Then, run the `findpath` method, giving destination coordinates and the path container as arguments. The path is solved from the current entity position.
 
-example of path:
-
-https://daedalus-lib.googlecode.com/svn/wiki/img/page4/path.jpg
-
 As a result, the path container should now list the coordinates of the path as pairs of (x, y) values. In consequence, a way to trace the path would be:
 
 {{{
@@ -59,6 +55,10 @@ for (var i:int=0 ; i<path.length/2 ; i++)
 	trace("y:" , path[i*2+1] );
 }
 }}}
+
+example of path ; the purple dots show you the path coordinates:
+
+https://daedalus-lib.googlecode.com/svn/wiki/img/page4/path.jpg
 
 Literally, the coordinates stored in path have the form:
 
