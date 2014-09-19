@@ -100,3 +100,7 @@ while (pathSampler.hasNext)
 	trace(entityAI.x, entityAI.y);
 }
 }}}
+
+example of sampled path ; the purple dots show you the sampling steps:
+
+https://daedalus-lib.googlecode.com/svn/wiki/img/page4/path_sampled.jpg
