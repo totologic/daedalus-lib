@@ -17,3 +17,7 @@ view.drawPath(path);
 }}}
 
 Notice that you can use a single `DDLSSimpleView` instance to display at the same time your triangulation, entities and paths.
+
+example of display, entity is in green and path is purple:
+
+https://daedalus-lib.googlecode.com/svn/wiki/img/page5/show_view2.jpg
