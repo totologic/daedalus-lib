@@ -12,6 +12,5 @@ So Daedalus Lib is at first a library about 'fully dynamic constrained Delaunay 
 For people having pathfinding in mind, you understand now that you can't skip the understanding of the Delaunay triangulation, because it is one of the core concept in  Daedalus Lib.
 
  * (1) [https://dl.dropboxusercontent.com/u/84854464/totologic/thesis_demyen_2006.pdf Efficient Triangulation-Based Pathfinding by Douglas Jon Demyen]
- * (2) [https://dl.dropboxusercontent.com/u/84854464/totologic/fully_dynamic_constrained_delaunay_triangulation.pdf Fully Dynamic Constrained Delaunay
-Triangulations by Kallmann, Bieri and Thalmann]
+ * (2) [https://dl.dropboxusercontent.com/u/84854464/totologic/fully_dynamic_constrained_delaunay_triangulation.pdf Fully Dynamic Constrained Delaunay Triangulations by Kallmann, Bieri and Thalmann]
  * (3) [https://dl.dropboxusercontent.com/u/84854464/totologic/An%20Improved%20Incremental%20Algorithm%20for%20Constructing.pdf An improved incremental algorithm for constructing... by Marc Vigo Anglada]
