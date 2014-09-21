@@ -5,11 +5,13 @@
 
 The first motivation behind Daedalus was to build a compliant library for 2D game pathfinding. By my experience and after deep investigation, it appeared that pathfinding is not just about algorithms like A-star ; because you can't build a relevant pathfinding system without a relevant data representation for your environment. Many data representations are in competition, among them: tile based, graph based, mesh based... But everything I found has many drawbacks: lack of effienciency for large environment, complexity, need of pre-generated datas...
 
-Finally the best approach I found was in the thesis of Douglas Jon Demyen(1). It deals with triangulated environements and pathfinding through them. After more deep investigation, I was convinced it was the good way to go, because many papers from research(2) described how to build efficient and fully dynamic triangulated environments. Technically, we call it 'fully dynamic constrained Delaunay triangulation'.
+Finally the best approach I found was in the thesis of Douglas Jon Demyen(1). It deals with triangulated environements and pathfinding through them. After more deep investigation, I was convinced it was the good way to go, because many papers from research(2)(3) described how to build efficient and fully dynamic triangulated environments. Technically, we call it 'fully dynamic constrained Delaunay triangulation'.
 
 So Daedalus Lib is at first a library about 'fully dynamic constrained Delaunay triangulation' and it could considered just for that. I hope it does a good job for that purpose, having an original API making things easy and convenient.
 
 For people having pathfinding in mind, you understand now that you can't skip the understanding of the Delaunay triangulation, because it is one of the core concept in  Daedalus Lib.
 
- * (1) [https://dl.dropboxusercontent.com/u/84854464/totologic/thesis_demyen_2006.pdf Efficient Triangulation-Based Pathfinding]
- * (2) http://graphics.ucmerced.edu/publications/2003_Chapter_Kallmann.pdf
+ * (1) [https://dl.dropboxusercontent.com/u/84854464/totologic/thesis_demyen_2006.pdf Efficient Triangulation-Based Pathfinding by Douglas Jon Demyen]
+ * (2) [https://dl.dropboxusercontent.com/u/84854464/totologic/fully_dynamic_constrained_delaunay_triangulation.pdf Fully Dynamic Constrained Delaunay
+Triangulations by Kallmann, Bieri and Thalmann]
+ * (3) [https://dl.dropboxusercontent.com/u/84854464/totologic/An%20Improved%20Incremental%20Algorithm%20for%20Constructing.pdf An improved incremental algorithm for constructing... by Marc Vigo Anglada]
