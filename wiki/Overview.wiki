@@ -1,4 +1,4 @@
-#summary Overview of the concepts involved in Daedalus Lib
+#summary Introduction
 #labels ID-0
 
 ===What is Daedalus Lib about ?===
