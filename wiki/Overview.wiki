@@ -3,7 +3,7 @@
 
 ===What is Daedalus Lib about ?===
 
-The first motivation behind Daedalus was to build a compliant library for 2D game pathfinding. By my experience and after deep investigation, it appeared that pathfinding is not just about algorithms like A-star ; because you can't build a relevant pathfinding system without a relevant data representation for your environment. Many data representations are in competition, among them: tile based, graph based, mesh based... But everything I found had many drawbacks: lack of effienciency for large environment, complexity, need of pre-generated datas...
+The first motivation behind Daedalus was to build a compliant library for 2D game pathfinding. By my experience and after deep investigation, it appeared that pathfinding is not just about algorithms like A-star ; because you can't build a relevant pathfinding system without a relevant data representation for your environment. Many data representations are in competition, among them: tile based, graph based, mesh based... But everything I found had many drawbacks: lack of efficiency for large environment, complexity, need of pre-generated datas...
 
 Finally the best approach I found was in the thesis of Douglas Jon Demyen(1). It deals with triangulated environments and pathfinding through them. After more deep investigation, I was convinced it was the good way to go, because many papers from research(2)(3) described how to build efficient and fully dynamic triangulated environments. Technically, we call it _fully dynamic constrained Delaunay triangulation'_.
 
