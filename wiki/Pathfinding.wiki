@@ -104,3 +104,5 @@ while (pathSampler.hasNext)
 example of sampled path ; the purple dots show you the sampling steps:
 
 https://daedalus-lib.googlecode.com/svn/wiki/img/page4/path_sampled.jpg
+
+[SimpleView2 Next : Display debug view for your paths and entities]
