@@ -131,3 +131,5 @@ Also, remember that transformations are applied with a fixed order:
  # scaling
  # rotation
  # translation
+
+[SimpleView  Next : Display debug view for your triangulations]
