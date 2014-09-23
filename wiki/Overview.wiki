@@ -17,6 +17,8 @@ First, you must be able to build a triangulation that reflect your level design.
 
 It doesn't mean that Daedalus Lib must be your primary level data structure. You can for example update a Daedalus Lib triangulation from a tile based level structure or a physic engine instance. Daedalus Lib is designed to be complementary and it implements convenient methods allowing you to easily maintain a triangulation while your main game engine is running.
 
+[ModelisationBasics Next : Basic tools to build triangulations]
+
 ----
 
 Références:
