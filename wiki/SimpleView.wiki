@@ -23,3 +23,5 @@ example of a display with a maze mesh:
 https://daedalus-lib.googlecode.com/svn/wiki/img/page2/show_view.jpg
 
 Constrained edges are drawn in red whereas underlying triangulation's edges are in gray.
+
+[ModelisationBitmapData Next : Build triangulations from image vectorizations]
