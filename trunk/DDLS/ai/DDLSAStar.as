@@ -187,10 +187,8 @@ package DDLS.ai
 						
 						fromPoint.x = __entryX[__curFace];
 						fromPoint.y = __entryY[__curFace];
-						entryPoint.x = fromPoint.x;
-						entryPoint.y = fromPoint.y;
 						entryPoint.x = (innerEdge.originVertex.pos.x + innerEdge.destinationVertex.pos.x) /2;
-						entryPoint.x = (innerEdge.originVertex.pos.y + innerEdge.destinationVertex.pos.y) /2;
+						entryPoint.y = (innerEdge.originVertex.pos.y + innerEdge.destinationVertex.pos.y) /2;
 						distancePoint.x = entryPoint.x - toX;
 						distancePoint.y = entryPoint.y - toY;
 						h = distancePoint.length;
