@@ -46,7 +46,7 @@ for (var i:int=0 ; i<triangles.length ; i+=3)
 	screenMesh.graphics.lineTo(vertices[triangles[i+1]].x, vertices[triangles[i+1]].y);
 	screenMesh.graphics.lineTo(vertices[triangles[i+2]].x, vertices[triangles[i+2]].y);
 	screenMesh.graphics.lineTo(vertices[triangles[i]].x, vertices[triangles[i]].y);
-}			}
+}
 }}}
 
 From the following image:
