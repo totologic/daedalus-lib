@@ -1,5 +1,5 @@
 #summary Display debug view for your paths and entities
-#labels id-5
+#labels ID-5
 
 Although your paths and entities are rarely used directly for display, it is useful to have some tools showing them for debug.
 
