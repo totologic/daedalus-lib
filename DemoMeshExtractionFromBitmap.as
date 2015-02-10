@@ -11,7 +11,6 @@ package
 	{
 		
 		[Embed(source="DemoMeshExtractionFromBitmap.png")]
-		//[Embed(source="DemoFromBitmap.png")]
 		private var BmpClass:Class;
 		private var _bmp:Bitmap;
 		
