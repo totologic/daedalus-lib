@@ -21,3 +21,6 @@ Notice that you can use a single `DDLSSimpleView` instance to display at the sam
 example of display, entity is in green and path is purple:
 
 https://daedalus-lib.googlecode.com/svn/wiki/img/page5/show_view2.jpg
+
+
+[MeshDatasExtractionFromBitmap Next : Extract mesh datas from triangulated bitmap]
