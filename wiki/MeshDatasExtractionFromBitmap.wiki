@@ -1,7 +1,7 @@
 #summary Extract mesh datas from triangulated bitmap
 #labels ID-6
 
-Given a bitmap, Daedalus Lib can triangulate it and extract for you the whole mesh datas. Then these easily can be used in any third party library, as 3D or physics engine.
+Given a bitmap, Daedalus Lib can triangulate it and extract for you the whole mesh datas. Then these can easily be used in any third party library, as 3D or physics engine.
 
 ===What datas will I retrieve ?===
 
