@@ -53,6 +53,6 @@ From the following image:
 
 https://daedalus-lib.googlecode.com/svn/wiki/img/page6/example.jpg
 
-You would obtain the follwing result:
+You would obtain the following result:
 
 https://daedalus-lib.googlecode.com/svn/wiki/img/page6/result.jpg
