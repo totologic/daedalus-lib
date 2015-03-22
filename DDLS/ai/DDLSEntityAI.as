@@ -12,6 +12,8 @@ package DDLS.ai
 		private var _dirNormX:Number;
 		private var _dirNormY:Number;
 		private var _angleFOV:Number;
+		private var _radiusFOV:Number;
+		private var _radiusSquaredFOV:Number;
 		private var _approximateObject:DDLSObject;
 		private const NUM_SEGMENTS:int = 6;
 		
@@ -49,6 +51,17 @@ package DDLS.ai
 			_approximateObject.matrix.identity();
 			_approximateObject.matrix.translate(x, y);
 			return _approximateObject;
+		}
+		
+		public function get radiusFOV():Number
+		{
+			return _radiusFOV;
+		}
+		
+		public function set radiusFOV(value:Number):void
+		{
+			_radiusFOV = value;
+			_radiusSquaredFOV = _radiusFOV*_radiusFOV;
 		}
 
 		public function get angleFOV():Number
