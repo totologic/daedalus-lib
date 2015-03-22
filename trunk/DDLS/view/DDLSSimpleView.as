@@ -13,9 +13,15 @@ package DDLS.view
 	import flash.display.Sprite;
 	import flash.text.TextField;
 	import flash.utils.Dictionary;
-
+	
 	public class DDLSSimpleView
 	{
+		
+		public var colorEdges:uint = 0x999999;
+		public var colorConstraints:uint = 0xFF0000;
+		public var colorVertices:uint = 0x0000FF;
+		public var colorPaths:uint = 0xFF00FF;
+		public var colorEntities:uint = 0x00FF00;
 		
 		private var _edges:Sprite;
 		private var _constraints:Sprite;
@@ -32,8 +38,8 @@ package DDLS.view
 			_edges = new Sprite();
 			_constraints = new Sprite();
 			_vertices = new Sprite();
-			_paths = new Sprite();
 			_entities = new Sprite();
+			_paths = new Sprite();
 			
 			_surface = new Sprite();
 			_surface.addChild(_edges);
@@ -82,8 +88,7 @@ package DDLS.view
 				if (!vertexIsInsideAABB(vertex, mesh))
 					continue;
 				
-				//_vertices.graphics.lineStyle(0, 0);
-				_vertices.graphics.beginFill(0x0000FF, 1);
+				_vertices.graphics.beginFill(colorVertices, 1);
 				_vertices.graphics.drawCircle(vertex.pos.x, vertex.pos.y, 0.5);
 				_vertices.graphics.endFill();
 				
@@ -105,13 +110,13 @@ package DDLS.view
 					{
 						if (incomingEdge.isConstrained)
 						{
-							_constraints.graphics.lineStyle(2, 0xFF0000, 1, false, LineScaleMode.NONE);
+							_constraints.graphics.lineStyle(2, colorConstraints, 1, false, LineScaleMode.NONE);
 							_constraints.graphics.moveTo(incomingEdge.originVertex.pos.x, incomingEdge.originVertex.pos.y);
 							_constraints.graphics.lineTo(incomingEdge.destinationVertex.pos.x, incomingEdge.destinationVertex.pos.y);
 						}
 						else
 						{
-							_edges.graphics.lineStyle(1, 0x999999, 1, false, LineScaleMode.NONE);
+							_edges.graphics.lineStyle(1, colorEdges, 1, false, LineScaleMode.NONE);
 							_edges.graphics.moveTo(incomingEdge.originVertex.pos.x, incomingEdge.originVertex.pos.y);
 							_edges.graphics.lineTo(incomingEdge.destinationVertex.pos.x, incomingEdge.destinationVertex.pos.y);
 						}
@@ -127,10 +132,23 @@ package DDLS.view
 			if (cleanBefore)
 				_entities.graphics.clear();
 			
-			_entities.graphics.lineStyle(1, 0x00FF00, 1, false, LineScaleMode.NONE);
-			_entities.graphics.beginFill(0x00FF00, 0.5);
+			_entities.graphics.beginFill(colorEntities, 0.5);
 			_entities.graphics.drawCircle(entity.x, entity.y, entity.radius);
 			_entities.graphics.endFill();
+			if (entity.angleFOV > 0 && entity.radiusFOV > 0)
+			{
+				_entities.graphics.lineStyle(1, colorEntities, 1, false, LineScaleMode.NONE);
+				var dirAngle:Number;
+				dirAngle = Math.atan2(entity.dirNormY, entity.dirNormX);
+				var leftFieldX:Number = Math.cos(dirAngle - entity.angleFOV/2);
+				var leftFieldY:Number = Math.sin(dirAngle - entity.angleFOV/2);
+				_entities.graphics.moveTo(entity.x, entity.y);
+				_entities.graphics.lineTo(entity.x+leftFieldX*entity.radiusFOV, entity.y+leftFieldY*entity.radiusFOV);
+				var rightFieldX:Number = Math.cos(dirAngle + entity.angleFOV/2);
+				var rightFieldY:Number = Math.sin(dirAngle + entity.angleFOV/2);
+				_entities.graphics.moveTo(entity.x, entity.y);
+				_entities.graphics.lineTo(entity.x+rightFieldX*entity.radiusFOV, entity.y+rightFieldY*entity.radiusFOV);
+			}
 		}
 		
 		public function drawEntities(vEntities:Vector.<DDLSEntityAI>, cleanBefore:Boolean=true):void	
@@ -138,12 +156,9 @@ package DDLS.view
 			if (cleanBefore)
 				_entities.graphics.clear();
 			
-			_entities.graphics.lineStyle(1, 0x00FF00, 0.5, false, LineScaleMode.NONE);
 			for (var i:int=0 ; i<vEntities.length ; i++)
 			{
-				_entities.graphics.beginFill(0x00FF00, 1);
-				_entities.graphics.drawCircle(vEntities[i].x, vEntities[i].y, vEntities[i].radius);
-				_entities.graphics.endFill();
+				drawEntity(vEntities[i], false);
 			}
 		}
 		
@@ -155,7 +170,7 @@ package DDLS.view
 			if (path.length == 0)
 				return;
 			
-			_paths.graphics.lineStyle(1.5, 0xFF00FF, 0.5, false, LineScaleMode.NONE);
+			_paths.graphics.lineStyle(1.5, colorPaths, 0.5, false, LineScaleMode.NONE);
 			
 			_paths.graphics.moveTo(path[0], path[1]);
 			for (var i:int=2 ; i<path.length ; i+=2)
