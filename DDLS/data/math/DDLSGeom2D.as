@@ -84,6 +84,13 @@ package DDLS.data.math
 					//break;
 					//throw new Error("WALK TAKE MORE THAN 50 LOOP");
 				}
+				if (numIter == 1000)
+				{
+					trace("WALK TAKE MORE THAN 1000 LOOP -> WE ESCAPE");
+					objectContainer = null;
+					break;
+					//throw new Error("WALK TAKE MORE THAN 50 LOOP");
+				}
 				iterEdge.fromFace = currFace;
 				do
 				{
@@ -923,6 +930,28 @@ package DDLS.data.math
 			// set position:
 			vertexPos.x = a + t1*(c - a);
 			vertexPos.y = b + t1*(d - b);
+		}
+		
+		static public function projectOrthogonalyOnSegment(px:Number, py:Number, sp1x:Number, sp1y:Number, sp2x:Number, sp2y:Number, result:DDLSPoint2D):void
+		{
+			// set alias letters
+			var a:Number = sp1x;
+			var b:Number = sp1y;
+			var c:Number = sp2x;
+			var d:Number = sp2y;
+			var e:Number = px;
+			var f:Number = py;
+			
+			// system to solve:
+			// a + t1 (c - a) = e + t2 (d - b)
+			// b + t1 (d - b) = f - t2 (c - a)
+			
+			// solution:
+			var t1:Number = (a*a - a*c - a*e + b*b - b*d - b*f + c*e + d*f) / (a*a - 2*a*c + b*b - 2*b*d + c*c + d*d);
+			
+			// set position:
+			result.x = a + t1*(c - a);
+			result.y = b + t1*(d - b);
 		}
 		
 		// fill the result vector with 4 elements, with the form:
